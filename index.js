@@ -338,7 +338,7 @@ exports.totp = function totpGenerate (options) {
   if (options.counter == null) options.counter = exports._counter(options);
 
   // pass to hotp
-  return this.hotp(options);
+  return exports.hotp(options);
 };
 
 // Alias time() for totp()
@@ -511,7 +511,7 @@ exports.generateSecret = function generateSecret (options) {
   }
 
   // generate an ascii key
-  var key = this.generateSecretASCII(length, symbols);
+  var key = exports.generateSecretASCII(length, symbols);
 
   // return a SecretKey with ascii, hex, and base32
   var SecretKey = {};
